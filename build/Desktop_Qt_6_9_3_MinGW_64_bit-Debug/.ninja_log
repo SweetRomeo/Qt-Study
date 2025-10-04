@@ -1,14 +1,12 @@
 # ninja log v6
-16	446	7812180847628102	qt6-app_autogen/timestamp	9e2eb0ad4d204d33
-16	446	7812180847628102	qt6-app_autogen/mocs_compilation.cpp	9e2eb0ad4d204d33
-16	446	7812180847628102	C:/Users/KayaPC/Documents/qt6-app/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/qt6-app_autogen/timestamp	9e2eb0ad4d204d33
-16	446	7812180847628102	C:/Users/KayaPC/Documents/qt6-app/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/qt6-app_autogen/mocs_compilation.cpp	9e2eb0ad4d204d33
-454	599	7812180849066495	CMakeFiles/qt6-app.dir/qt6-app_autogen/mocs_compilation.cpp.obj	e4db6e9c3dfbdf44
-465	5598	7812180849098172	CMakeFiles/qt6-app.dir/main.cpp.obj	ed36caa66d63a42
-5608	5940	7812180900603614	qt6-app.exe	da4fa27c4be552d6
 79	444	7812292082323787	qt6-app_autogen/timestamp	9e2eb0ad4d204d33
-79	444	7812292082323787	qt6-app_autogen/mocs_compilation.cpp	9e2eb0ad4d204d33
 79	444	7812292082323787	C:/Users/KayaPC/Documents/qt6-app/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/qt6-app_autogen/timestamp	9e2eb0ad4d204d33
+79	444	7812292082323787	qt6-app_autogen/mocs_compilation.cpp	9e2eb0ad4d204d33
 79	444	7812292082323787	C:/Users/KayaPC/Documents/qt6-app/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/qt6-app_autogen/mocs_compilation.cpp	9e2eb0ad4d204d33
+454	599	7812180849066495	CMakeFiles/qt6-app.dir/qt6-app_autogen/mocs_compilation.cpp.obj	e4db6e9c3dfbdf44
 446	6220	7812292085999571	CMakeFiles/qt6-app.dir/main.cpp.obj	ed36caa66d63a42
 6221	6527	7812292143754417	qt6-app.exe	da4fa27c4be552d6
+68	399	7812886977888160	qt6-app_autogen/timestamp	9e2eb0ad4d204d33
+68	399	7812886977888160	qt6-app_autogen/mocs_compilation.cpp	9e2eb0ad4d204d33
+68	399	7812886977888160	C:/Users/KayaPC/Documents/qt6-app/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/qt6-app_autogen/timestamp	9e2eb0ad4d204d33
+68	399	7812886977888160	C:/Users/KayaPC/Documents/qt6-app/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/qt6-app_autogen/mocs_compilation.cpp	9e2eb0ad4d204d33
