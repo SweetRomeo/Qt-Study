@@ -12,11 +12,15 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
 
+find_package(Qt6 REQUIRED COMPONENTS Core)
+
 add_executable(qt6-app
   main.cpp
   Notes
+  numberutil.h numberutil.cpp
 )
 target_link_libraries(qt6-app Qt${QT_VERSION_MAJOR}::Core)
+target_link_libraries(qt6-app PRIVATE Qt6::Core)
 
 include(GNUInstallDirs)
 install(TARGETS qt6-app

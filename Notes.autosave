@@ -4,7 +4,8 @@ kütüphanedir. Standart Output işlemlerini
 yöneten bazı çıkış işlemlerini aşağıda gösterilmiştir.
 qInfo() standart iostream kütüphanesinin output işlemlerine
 benzer çalışmaktadır. qDebug, qWarning veya qFatal gibi
-sınıflar ise yine Qt'a özgü olup bazı işlemleri 
+sınıflar ise yine Qt'a özgü olup bazı durumlara göre mesajlar 
+verilmesini sağlanır.
 -------------------------------------------*/
 
 #include <QCoreApplication>
