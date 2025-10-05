@@ -1,0 +1,28 @@
+/*-------------------------------------------
+QDebug Qt designera ait olan 3rd party bir
+kütüphanedir. Standart Output işlemlerini
+yöneten bazı çıkış işlemlerini aşağıda gösterilmiştir.
+qInfo() standart iostream kütüphanesinin output işlemlerine
+benzer çalışmaktadır. qDebug, qWarning veya qFatal gibi
+sınıflar ise yine Qt'a özgü olup bazı durumlara göre mesajlar
+verilmesini sağlanır.
+-------------------------------------------*/
+
+#include <QCoreApplication>
+#include <QDebug>
+#include <iostream>
+
+int main(int argc, char *argv[])
+{
+    using std::cout;
+    QCoreApplication a(argc, argv);
+
+    qInfo() << "Info" << '\n';
+    qDebug() << "Debug Message" << '\n';
+    qWarning() << "Warning Message" << '\n';
+    qFatal() << "Fatal Error" << '\n';
+    cout << "Hello World\n";
+
+
+    return a.exec();
+}
