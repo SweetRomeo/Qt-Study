@@ -58,3 +58,16 @@ bool NumberUtil::isPrime(const int val)
     }
     return true;
 }
+
+int NumberUtil::reverse(int val)
+{
+    int rev = 0;
+
+    while (val)
+    {
+        rev *= 10;
+        rev += val % 10;
+        val /= 10;
+    }
+    return rev;
+}

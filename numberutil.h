@@ -12,6 +12,7 @@ public:
     explicit NumberUtil(QObject *parent = nullptr);
     int sumDigits(int val);
     int countDigits(int val);
+    int reverse(int val);
     bool isArmstrong(int val);
     bool isPrime(const int val);
 signals:
