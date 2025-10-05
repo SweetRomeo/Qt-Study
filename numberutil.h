@@ -11,6 +11,8 @@ class NumberUtil : public QObject
 public:
     explicit NumberUtil(QObject *parent = nullptr);
     int power(int a, int b);
+    int factorial(int val);
+    unsigned long long factorial(long long val);
     int sumDigits(int val);
     int countDigits(int val);
     int reverse(int val);

@@ -14,6 +14,27 @@ int NumberUtil::power(int a, int b)
     return result;
 }
 
+int NumberUtil::factorial(int val)
+{
+    int result = 1;
+    for (int i = 2; i <= val; ++i)
+    {
+        result *= i;
+    }
+    return result;
+}
+
+unsigned long long NumberUtil::factorial(long long val)
+{
+    unsigned long long result = 1;
+
+    for (int i = 2; i <= val; ++i)
+    {
+        result *= i;
+    }
+    return result;
+}
+
 int NumberUtil::sumDigits(int val)
 {
     int sum = 0;
