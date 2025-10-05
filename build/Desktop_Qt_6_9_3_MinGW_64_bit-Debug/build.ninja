@@ -65,6 +65,38 @@ build CMakeFiles/qt6-app.dir/main.cpp.obj: CXX_COMPILER__qt6-app_unscanned_Debug
   OBJECT_DIR = CMakeFiles\qt6-app.dir
   OBJECT_FILE_DIR = CMakeFiles\qt6-app.dir
 
+build CMakeFiles/qt6-app.dir/numberutil.cpp.obj: CXX_COMPILER__qt6-app_unscanned_Debug C$:/Users/KayaPC/Documents/qt6-app/numberutil.cpp || cmake_object_order_depends_target_qt6-app
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\qt6-app.dir\numberutil.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/KayaPC/Documents/qt6-app/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/qt6-app_autogen/include -isystem C:/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Qt/6.9.3/mingw_64/include -isystem C:/Qt/6.9.3/mingw_64/mkspecs/win32-g++
+  OBJECT_DIR = CMakeFiles\qt6-app.dir
+  OBJECT_FILE_DIR = CMakeFiles\qt6-app.dir
+
+build CMakeFiles/qt6-app.dir/stringutil.cpp.obj: CXX_COMPILER__qt6-app_unscanned_Debug C$:/Users/KayaPC/Documents/qt6-app/stringutil.cpp || cmake_object_order_depends_target_qt6-app
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\qt6-app.dir\stringutil.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/KayaPC/Documents/qt6-app/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/qt6-app_autogen/include -isystem C:/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Qt/6.9.3/mingw_64/include -isystem C:/Qt/6.9.3/mingw_64/mkspecs/win32-g++
+  OBJECT_DIR = CMakeFiles\qt6-app.dir
+  OBJECT_FILE_DIR = CMakeFiles\qt6-app.dir
+
+build CMakeFiles/qt6-app.dir/source.cpp.obj: CXX_COMPILER__qt6-app_unscanned_Debug C$:/Users/KayaPC/Documents/qt6-app/source.cpp || cmake_object_order_depends_target_qt6-app
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\qt6-app.dir\source.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/KayaPC/Documents/qt6-app/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/qt6-app_autogen/include -isystem C:/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Qt/6.9.3/mingw_64/include -isystem C:/Qt/6.9.3/mingw_64/mkspecs/win32-g++
+  OBJECT_DIR = CMakeFiles\qt6-app.dir
+  OBJECT_FILE_DIR = CMakeFiles\qt6-app.dir
+
+build CMakeFiles/qt6-app.dir/destination.cpp.obj: CXX_COMPILER__qt6-app_unscanned_Debug C$:/Users/KayaPC/Documents/qt6-app/destination.cpp || cmake_object_order_depends_target_qt6-app
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\qt6-app.dir\destination.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/KayaPC/Documents/qt6-app/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/qt6-app_autogen/include -isystem C:/Qt/6.9.3/mingw_64/include/QtCore -isystem C:/Qt/6.9.3/mingw_64/include -isystem C:/Qt/6.9.3/mingw_64/mkspecs/win32-g++
+  OBJECT_DIR = CMakeFiles\qt6-app.dir
+  OBJECT_FILE_DIR = CMakeFiles\qt6-app.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target qt6-app
@@ -73,7 +105,7 @@ build CMakeFiles/qt6-app.dir/main.cpp.obj: CXX_COMPILER__qt6-app_unscanned_Debug
 #############################################
 # Link the executable qt6-app.exe
 
-build qt6-app.exe: CXX_EXECUTABLE_LINKER__qt6-app_Debug CMakeFiles/qt6-app.dir/qt6-app_autogen/mocs_compilation.cpp.obj CMakeFiles/qt6-app.dir/main.cpp.obj | C$:/Qt/6.9.3/mingw_64/lib/libQt6Core.a || qt6-app_autogen qt6-app_autogen_timestamp_deps
+build qt6-app.exe: CXX_EXECUTABLE_LINKER__qt6-app_Debug CMakeFiles/qt6-app.dir/qt6-app_autogen/mocs_compilation.cpp.obj CMakeFiles/qt6-app.dir/main.cpp.obj CMakeFiles/qt6-app.dir/numberutil.cpp.obj CMakeFiles/qt6-app.dir/stringutil.cpp.obj CMakeFiles/qt6-app.dir/source.cpp.obj CMakeFiles/qt6-app.dir/destination.cpp.obj | C$:/Qt/6.9.3/mingw_64/lib/libQt6Core.a || qt6-app_autogen qt6-app_autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG -g
   LINK_LIBRARIES = C:/Qt/6.9.3/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\qt6-app.dir

@@ -10,14 +10,14 @@ class NumberUtil : public QObject
     Q_OBJECT
 public:
     explicit NumberUtil(QObject *parent = nullptr);
-    int power(int a, int b);
-    int factorial(int val);
-    unsigned long long factorial(long long val);
-    int sumDigits(int val);
-    int countDigits(int val);
-    int reverse(int val);
-    bool isArmstrong(int val);
-    bool isPrime(const int val);
+    static int power(int a, int b);
+    static int factorial(int val);
+    static unsigned long long factorial(long long val);
+    static int sumDigits(int val);
+    static int countDigits(int val);
+    static int reverse(int val);
+    static bool isArmstrong(int val);
+    static bool isPrime(const int val);
 signals:
 };
 
