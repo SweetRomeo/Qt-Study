@@ -12,22 +12,26 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
 
+# ÖNCE executable'ı oluştur
 find_package(Qt6 REQUIRED COMPONENTS Core)
 find_package(Qt6 REQUIRED COMPONENTS Core)
-
-target_sources(qt6-app
-  PRIVATE
-    stringutil.h stringutil.cpp
-)
 
 add_executable(qt6-app
   main.cpp
-  Notes
   numberutil.h numberutil.cpp
+  stringutil.h stringutil.cpp
+  source.h source.cpp
+  destination.h destination.cpp
 )
+
+# SONRA diğer kaynakları ekle (gerekirse)
+target_sources(qt6-app
+  PRIVATE
+    # Buraya ek kaynaklar ekleyebilirsiniz
+)
+
+# Sadece bir kez target_link_libraries kullanın
 target_link_libraries(qt6-app Qt${QT_VERSION_MAJOR}::Core)
-target_link_libraries(qt6-app PRIVATE Qt6::Core)
-target_link_libraries(qt6-app PRIVATE Qt6::Core)
 
 include(GNUInstallDirs)
 install(TARGETS qt6-app

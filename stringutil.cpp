@@ -69,3 +69,33 @@ bool StringUtil::BracketMatcher(std::string str)
     return count == 0;
 }
 
+std::string LongestWord(std::string text) {
+    std::string temp;
+    std::string result;
+    int len = 0;
+    for (char ch : text)
+    {
+        if (!isspace(ch))
+        {
+            if (isalnum(ch))
+            {
+                temp += ch;
+            }
+        }
+        else
+        {
+            if (temp.length() > len)
+            {
+                len = temp.length();
+                result = temp;
+            }
+            temp = "";
+        }
+    }
+    if (temp.length() > len)
+    {
+        result = temp;
+    }
+
+    return result;
+}
