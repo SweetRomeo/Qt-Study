@@ -14,6 +14,7 @@ public:
     std::string reverseString(std::string);
     char* reverseString(char*);
     bool CodelandUsernameValidation(std::string);
+    bool BracketMatcher(std::string);
 signals:
 };
 

@@ -31,7 +31,7 @@ char* StringUtil::reverseString(char* text)
     return text;
 }
 
-bool CodelandUsernameValidation(std::string str) {
+bool StringUtil::CodelandUsernameValidation(std::string str) {
     auto len = str.length();
     if (len > 25 || len < 4 || !isalpha(str[0]) || str[len - 1] == '_' )
     {
@@ -46,3 +46,26 @@ bool CodelandUsernameValidation(std::string str) {
     }
     return true;
 }
+
+bool StringUtil::BracketMatcher(std::string str)
+{
+    int count = 0;
+    for (char ch : str)
+    {
+        if (ch == '(')
+        {
+            count++;
+        }
+        else if (ch == ')')
+        {
+            count--;
+        }
+        if (count < 0)
+        {
+            return false;
+        }
+    }
+
+    return count == 0;
+}
+
