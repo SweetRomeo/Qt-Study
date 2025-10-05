@@ -10,6 +10,7 @@ class NumberUtil : public QObject
     Q_OBJECT
 public:
     explicit NumberUtil(QObject *parent = nullptr);
+    int power(int a, int b);
     int sumDigits(int val);
     int countDigits(int val);
     int reverse(int val);
