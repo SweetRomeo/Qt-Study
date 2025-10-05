@@ -10,11 +10,14 @@ class StringUtil : public QObject
     Q_OBJECT
 public:
     explicit StringUtil(QObject *parent = nullptr);
-    int length(char*);
-    std::string reverseString(std::string);
-    char* reverseString(char*);
-    bool CodelandUsernameValidation(std::string);
-    bool BracketMatcher(std::string);
+    static std::string reverseString(std::string);
+    static char* reverseString(char*);
+    static bool CodelandUsernameValidation(std::string);
+    static bool BracketMatcher(std::string);
+    static bool isPalindrome(std::string str);
+    static bool isPalindrome(char*);
+private:
+    static int length(char*);
 signals:
 };
 

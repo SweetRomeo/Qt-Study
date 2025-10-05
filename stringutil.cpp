@@ -99,3 +99,22 @@ std::string LongestWord(std::string text) {
 
     return result;
 }
+
+bool StringUtil::isPalindrome(std::string str)
+{
+    str.erase(std::remove_if(str.begin(), str.end(), [](unsigned char x) { return std::isspace(x); }), str.end());
+    return std::string(str.rbegin(), str.rend()) == str;
+}
+
+bool StringUtil::isPalindrome(char* text)
+{
+    int len = length(text);
+    for (int i = 0; i < len; ++i)
+    {
+        if (*(text + len - 1 - i) != *(text + i))
+        {
+            return false;
+        }
+    }
+    return true;
+}
