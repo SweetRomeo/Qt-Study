@@ -4,6 +4,7 @@
 #include <QObject>
 #include <string>
 #include <cctype>
+#include <unordered_map>
 
 class StringUtil : public QObject
 {
@@ -16,6 +17,9 @@ public:
     static bool BracketMatcher(std::string);
     static bool isPalindrome(std::string str);
     static bool isPalindrome(char*);
+    static bool isPangram(std::string);
+    static bool hasRepeatingLetters(std::string str);
+    static std::string LetterCount(std::string str);
 private:
     static int length(char*);
 signals:

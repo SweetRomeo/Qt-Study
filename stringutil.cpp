@@ -118,3 +118,58 @@ bool StringUtil::isPalindrome(char* text)
     }
     return true;
 }
+
+bool StringUtil::isPangram(std::string text)
+{
+    std::string alphabeth = "abcdefghijklmnqrstpuoxwyz";
+
+    for (char ch : alphabeth)
+    {
+        if (auto search = text.find(ch); search == std::string::npos)
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
+bool hasRepeatingLetters(std::string str)
+{
+    std::unordered_map<char, int> letters;
+    for (char c : str)
+    {
+        letters[c]++;
+    }
+    for (std::pair<char, int> letter : letters)
+    {
+        if (letter.second > 1)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+std::string LetterCount(std::string str) {
+    std::string temp;
+    for (char c : str)
+    {
+        if (!isspace(c))
+        {
+            temp += c;
+        }
+        else
+        {
+            if (hasRepeatingLetters(temp))
+            {
+                return temp;
+            }
+            temp = "";
+        }
+    }
+    if (hasRepeatingLetters(temp))
+    {
+        return temp;
+    }
+    return "-1";
+}
