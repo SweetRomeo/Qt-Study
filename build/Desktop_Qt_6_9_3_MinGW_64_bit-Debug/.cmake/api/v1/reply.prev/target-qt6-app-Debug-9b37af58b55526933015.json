@@ -35,19 +35,19 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 19,
+				"line" : 21,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 37,
+				"line" : 41,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 34,
+				"line" : 38,
 				"parent" : 0
 			},
 			{
@@ -167,18 +167,20 @@
 				3,
 				5,
 				7,
-				9
+				9,
+				11,
+				13
 			]
 		}
 	],
 	"dependencies" : 
 	[
 		{
-			"id" : "qt6-app_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 0,
 			"id" : "qt6-app_autogen::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "qt6-app_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "qt6-app::@6890427a1f51a3e7e1df",
@@ -248,7 +250,9 @@
 				3,
 				5,
 				7,
-				9
+				9,
+				11,
+				13
 			]
 		},
 		{
@@ -258,21 +262,23 @@
 				2,
 				4,
 				6,
-				8
+				8,
+				10,
+				12
 			]
 		},
 		{
 			"name" : "",
 			"sourceIndexes" : 
 			[
-				10
+				14
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				11
+				15
 			]
 		}
 	],
@@ -333,6 +339,28 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "destination.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "station.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "station.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "radio.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "radio.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
