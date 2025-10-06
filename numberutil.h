@@ -16,8 +16,11 @@ public:
     static int sumDigits(int val);
     static int countDigits(int val);
     static int reverse(int val);
+    static bool isEven(const int val);
+    static bool isOdd(const int val);
     static bool isArmstrong(int val);
     static bool isPrime(const int val);
+    static bool isPowerofTwo(const int val);
 signals:
 };
 

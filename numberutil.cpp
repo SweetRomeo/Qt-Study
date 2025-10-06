@@ -57,6 +57,29 @@ int NumberUtil::countDigits(int val)
     return count;
 }
 
+int NumberUtil::reverse(int val)
+{
+    int rev = 0;
+
+    while (val)
+    {
+        rev *= 10;
+        rev += val % 10;
+        val /= 10;
+    }
+    return rev;
+}
+
+bool NumberUtil::isEven(const int val)
+{
+    return val % 2 == 0;
+}
+
+bool NumberUtil::isOdd(const int val)
+{
+    return !isEven(val);
+}
+
 bool NumberUtil::isArmstrong(int val)
 {
     int temp = val;
@@ -90,15 +113,7 @@ bool NumberUtil::isPrime(const int val)
     return true;
 }
 
-int NumberUtil::reverse(int val)
+bool NumberUtil::isPowerofTwo(const int val)
 {
-    int rev = 0;
-
-    while (val)
-    {
-        rev *= 10;
-        rev += val % 10;
-        val /= 10;
-    }
-    return rev;
+    return val & (val - 1) && val != 0;
 }
