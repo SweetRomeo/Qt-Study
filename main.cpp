@@ -1,9 +1,11 @@
 #include <QCoreApplication>
+#include <QTextStream>
 #include <QDebug>
 #include <iostream>
+#include <string>
 #include "numberutil.h"
-#include "source.h"
-#include "destination.h"
+#include "station.h"
+#include "radio.h"
 
 template<class Con>
 void print(Con con)
@@ -26,17 +28,78 @@ void isPrimeTestUntil(long long maxValue)
 
 int main(int argc, char *argv[])
 {
-    using std::cout;
+    using namespace std;
     QCoreApplication a(argc, argv);
 
-    Source oSource;
-    Destination oDestination;
+    qDebug() << "=== INPUT TEST ===";
+    qDebug() << "Testing QTextStream...";
 
-    QObject::connect(&oSource, &Source::MySignal, &oDestination,&Destination::MySignal);
+    QTextStream in(stdin);
+    QString line = in.readLine();
+    qDebug() << "QTextStream result:" << line;
 
-    //oSource.test();
+    qDebug() << "Testing std::cin...";
+    std::string stdline;
+    std::getline(std::cin, stdline);
+    qDebug() << "std::cin result:" << QString::fromStdString(stdline);
 
-    oDestination.MySignal("Hello World");
 
+    Radio boombox;
+    Station* channels[3];
+
+    channels[0] = new Station(&boombox, 94, "Music");
+    channels[1] = new Station(&boombox, 87, "Magazine");
+    channels[2] = new Station(&boombox, 104, "News");
+
+    boombox.connect(&boombox, &Radio::quit, &a, &QCoreApplication::quit);
+    bool running = true;
+    QTextStream qtin(stdin);
+
+    while (running)
+    {
+        qInfo() << "Enter on, off, test or quit";
+        std::string line;
+        std::cin >> line;
+        std::cout << line;
+        if (line == "ON")
+        {
+            qInfo() << "Turning the radio on";
+            for (int i = 0; i < 3; ++i)
+            {
+                Station* channel = channels[i];
+                boombox.connect(channel, &Station::send, &boombox, &Radio::listen);
+            }
+            qInfo() << "Radio is on";
+        }
+
+        if (line == "OFF")
+        {
+            qInfo() << "Turning the radio off";
+            for (int i = 0; i < 3; ++i)
+            {
+                Station* channel = channels[i];
+                boombox.disconnect(channel, &Station::send, &boombox, &Radio::listen);
+            }
+            qInfo() << "Radio is off";
+        }
+
+        if (line == "TEST")
+        {
+            qInfo() << "Testing";
+            for (int i = 0; i < 3; ++i)
+            {
+                Station* channel = channels[i];
+                channel->broadcast("Broadcasting live!");
+            }
+            qInfo() << "Test complete";
+        }
+
+        if (line == "QUIT")
+        {
+            qInfo() << "Quitting";
+            running = false;
+        }
+    }
+    std::cout << "Main ended";
     return a.exec();
 }

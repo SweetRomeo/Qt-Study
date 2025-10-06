@@ -459,8 +459,12 @@ qt6-app_autogen/timestamp: \
 	C:/Users/KayaPC/Documents/qt6-app/main.cpp \
 	C:/Users/KayaPC/Documents/qt6-app/numberutil.cpp \
 	C:/Users/KayaPC/Documents/qt6-app/numberutil.h \
+	C:/Users/KayaPC/Documents/qt6-app/radio.cpp \
+	C:/Users/KayaPC/Documents/qt6-app/radio.h \
 	C:/Users/KayaPC/Documents/qt6-app/source.cpp \
 	C:/Users/KayaPC/Documents/qt6-app/source.h \
+	C:/Users/KayaPC/Documents/qt6-app/station.cpp \
+	C:/Users/KayaPC/Documents/qt6-app/station.h \
 	C:/Users/KayaPC/Documents/qt6-app/stringutil.cpp \
 	C:/Users/KayaPC/Documents/qt6-app/stringutil.h \
 	C:/Qt/Tools/CMake_64/bin/cmake.exe
