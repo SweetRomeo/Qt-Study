@@ -215,3 +215,42 @@ std::string StringUtil::countVowels(std::string text)
     }
     return std::to_string(count);
 }
+
+int StringUtil::countVowels(const char* text)
+{
+    int count = 0;
+    while (*text)
+    {
+        if (isVowel(*text++))
+        {
+            count++;
+        }
+    }
+    return count;
+}
+
+int StringUtil::countWords(std::string text)
+{
+    int count = 1;
+    for (char c : text)
+    {
+        if (isspace(c))
+        {
+            count++;
+        }
+    }
+    return count;
+}
+
+int StringUtil::countWords(const char* text)
+{
+    int count = 1;
+    while (*text)
+    {
+        if (isspace(*text++))
+        {
+            count++;
+        }
+    }
+    return count;
+}
