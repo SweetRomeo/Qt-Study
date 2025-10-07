@@ -4,6 +4,14 @@ StringUtil::StringUtil(QObject *parent)
     : QObject{parent}
 {}
 
+bool StringUtil::isVowel(char ch)
+{
+    return ch == 'a' || ch == 'A' || ch == 'e' ||
+           ch == 'E' || ch == 'i' || ch == 'I' ||
+           ch == 'o' || ch == 'O' || ch == 'u' ||
+           ch == 'U';
+}
+
 int StringUtil::length(char* text)
 {
     int len = 0;
@@ -133,6 +141,27 @@ bool StringUtil::isPangram(std::string text)
     return true;
 }
 
+std::string StringUtil::LetterCapitalize(std::string text)
+{
+    bool isSpaceFound = true;
+    for (int i = 0; i < text.length(); ++i)
+    {
+        if (!isspace(text[i]) && isSpaceFound)
+        {
+            if (islower(text[i]))
+            {
+                text[i] = std::toupper(text[i]);
+            }
+            isSpaceFound = false;
+        }
+        else if (isspace(text[i]))
+        {
+            isSpaceFound = true;
+        }
+    }
+    return text;
+}
+
 bool hasRepeatingLetters(std::string str)
 {
     std::unordered_map<char, int> letters;
@@ -172,4 +201,17 @@ std::string LetterCount(std::string str) {
         return temp;
     }
     return "-1";
+}
+
+std::string StringUtil::countVowels(std::string text)
+{
+    int count = 0;
+    for (char c : text)
+    {
+        if (isVowel(c))
+        {
+            count++;
+        }
+    }
+    return std::to_string(count);
 }

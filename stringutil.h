@@ -15,13 +15,16 @@ public:
     static char* reverseString(char*);
     static bool CodelandUsernameValidation(std::string);
     static bool BracketMatcher(std::string);
-    static bool isPalindrome(std::string str);
+    static bool isPalindrome(std::string);
     static bool isPalindrome(char*);
     static bool isPangram(std::string);
-    static bool hasRepeatingLetters(std::string str);
-    static std::string LetterCount(std::string str);
+    static bool hasRepeatingLetters(std::string);
+    static std::string LetterCount(std::string);
+    static std::string LetterCapitalize(std::string);
+    static std::string countVowels(std::string);
 private:
     static int length(char*);
+    static bool isVowel(char);
 signals:
 };
 
