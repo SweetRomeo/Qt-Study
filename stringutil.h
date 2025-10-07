@@ -22,6 +22,9 @@ public:
     static std::string LetterCount(std::string);
     static std::string LetterCapitalize(std::string);
     static std::string countVowels(std::string);
+    static int countVowels(const char*);
+    static int countWords(std::string);
+    static int countWords(const char*);
 private:
     static int length(char*);
     static bool isVowel(char);
