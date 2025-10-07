@@ -26,23 +26,8 @@ void isPrimeTestUntil(long long maxValue)
         }
 }
 
-int main(int argc, char *argv[])
+void radioStationTest()
 {
-    using namespace std;
-    QCoreApplication a(argc, argv);
-
-    qDebug() << "=== INPUT TEST ===";
-    qDebug() << "Testing QTextStream...";
-
-    QTextStream in(stdin);
-    QString line = in.readLine();
-    qDebug() << "QTextStream result:" << line;
-
-    qDebug() << "Testing std::cin...";
-    std::string stdline;
-    std::getline(std::cin, stdline);
-    qDebug() << "std::cin result:" << QString::fromStdString(stdline);
-
 
     Radio boombox;
     Station* channels[3];
@@ -51,7 +36,7 @@ int main(int argc, char *argv[])
     channels[1] = new Station(&boombox, 87, "Magazine");
     channels[2] = new Station(&boombox, 104, "News");
 
-    boombox.connect(&boombox, &Radio::quit, &a, &QCoreApplication::quit);
+    //boombox.connect(&boombox, &Radio::quit, &a, &QCoreApplication::quit);
     bool running = true;
     QTextStream qtin(stdin);
 
@@ -100,6 +85,25 @@ int main(int argc, char *argv[])
             running = false;
         }
     }
-    std::cout << "Main ended";
+}
+
+int main(int argc, char *argv[])
+{
+    using namespace std;
+    QCoreApplication a(argc, argv);
+
+    qDebug() << "=== INPUT TEST ===";
+    qDebug() << "Testing QTextStream...";
+
+    QTextStream in(stdin);
+    QString line = in.readLine();
+    qDebug() << "QTextStream result:" << line;
+
+    qDebug() << "Testing std::cin...";
+    std::string stdline;
+    std::getline(std::cin, stdline);
+    qDebug() << "std::cin result:" << QString::fromStdString(stdline);
+
+    radioStationTest();
     return a.exec();
 }
