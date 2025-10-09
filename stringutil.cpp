@@ -254,3 +254,15 @@ int StringUtil::countWords(const char* text)
     }
     return count;
 }
+
+std::string StringUtil::ABCheck(const std::string text)
+{
+    for (auto i = 0; i < text.size(); ++i)
+    {
+        if (text[i] == 'a' && text[i + 4] == 'b' || text[i] == 'b' && text[i + 4] == 'a')
+        {
+            return "true";
+        }
+    }
+    return "false";
+}
