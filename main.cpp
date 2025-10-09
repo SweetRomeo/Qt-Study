@@ -91,19 +91,6 @@ int main(int argc, char *argv[])
 {
     using namespace std;
     QCoreApplication a(argc, argv);
-
-    qDebug() << "=== INPUT TEST ===";
-    qDebug() << "Testing QTextStream...";
-
-    QTextStream in(stdin);
-    QString line = in.readLine();
-    qDebug() << "QTextStream result:" << line;
-
-    qDebug() << "Testing std::cin...";
-    std::string stdline;
-    std::getline(std::cin, stdline);
-    qDebug() << "std::cin result:" << QString::fromStdString(stdline);
-
     radioStationTest();
     return a.exec();
 }
