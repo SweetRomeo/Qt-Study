@@ -266,3 +266,47 @@ std::string StringUtil::ABCheck(const std::string text)
     }
     return "false";
 }
+
+std::string StringUtil::AlphabethSoup(std::string text)
+{
+    std::sort(text.begin(), text.end());
+    return text;
+}
+
+std::string StringUtil::CamelCase(std::string text)
+{
+    std::string resultText;
+    bool isBegin = true;
+    for (char c : text)
+    {
+        if (std::isalpha(c))
+        {
+            resultText += isBegin ? toupper(c) : tolower(c);
+            isBegin = false;
+        }
+        else
+        {
+            isBegin = true;
+        }
+    }
+    resultText[0] = text[0];
+    return resultText;
+}
+
+std::string StringUtil::ASCIIConversion(std::string text)
+{
+    std::string resultText;
+    for (auto i = 0; i < text.length(); ++i)
+    {
+        if (!isspace(text[i]))
+        {
+            int temp = text[i];
+            resultText += std::to_string(temp);
+        }
+        else
+        {
+            resultText += text[i];
+        }
+    }
+    return resultText;
+}

@@ -26,6 +26,9 @@ public:
     static int countWords(std::string);
     static int countWords(const char*);
     static std::string ABCheck(std::string);
+    static std::string AlphabethSoup(std::string);
+    static std::string CamelCase(std::string);
+    static std::string ASCIIConversion(std::string);
 private:
     static int length(char*);
     static bool isVowel(char);
