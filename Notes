@@ -29,3 +29,41 @@ int main(int argc, char *argv[])
 /*-------------------------------------------
 Signals and Slots
 -------------------------------------------*/
+
+
+/*--------------------------------------------
+SnakeCase algorithm example
+--------------------------------------------*/
+#include <cctype>
+#include <iostream>
+#include <string>
+#include <cctype>
+
+using namespace std;
+
+string SnakeCase(string str) 
+{
+  string temp;
+  string resultText;
+  for (char c : str)
+  {
+    if (isalpha(c))
+    {
+      temp += tolower(c);
+    }
+    else
+    {
+      resultText += temp + "_";
+      temp = "";
+    }
+  } 
+  resultText += temp;
+  return resultText;
+}
+
+int main(void) { 
+   
+  cout << SnakeCase(coderbyteInternalStdinFunction(stdin));
+  return 0;
+    
+}
