@@ -310,3 +310,39 @@ std::string StringUtil::ASCIIConversion(std::string text)
     }
     return resultText;
 }
+
+std::string StringUtil::PalindromeCreator(std::string text) {
+
+    if (isPalindrome(text)) {
+        return "palindrome";
+    }
+
+    for (auto i = 0; i < text.length(); ++i)
+    {
+        std::string temp = text;
+        temp.erase(temp.begin() + i);
+
+        if (isPalindrome(temp)) {
+            return std::string(1, text[i]);
+        }
+    }
+
+    for (auto i = 0; i < text.length(); ++i)
+    {
+        for (auto j = i + 1; j < text.length(); ++j)
+        {
+            std::string temp = text;
+            temp.erase(temp.begin() + j);
+            temp.erase(temp.begin() + i);
+
+            if (isPalindrome(temp)) {
+                std::string result = "";
+                result += text[i];
+                result += text[j];
+                return result;
+            }
+        }
+    }
+
+    return "not possible";
+}
