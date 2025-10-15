@@ -29,7 +29,7 @@ public:
     static std::string AlphabethSoup(std::string);
     static std::string CamelCase(std::string);
     static std::string ASCIIConversion(std::string);
-private:
+    static std::string PalindromeCreator(std::string);
     static int length(char*);
     static bool isVowel(char);
 signals:
