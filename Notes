@@ -67,3 +67,32 @@ int main(void) {
   return 0;
     
 }
+
+/*-------------------------------------------------------------
+FizzBuzz function
+-------------------------------------------------------------*/
+string FizzBuzz(int num) {
+  
+  // code goes here 
+  stringstream result; 
+  for (int i = 1; i <= num; ++i)
+  {
+    if (i % 3 == 0 && i % 5 == 0)
+    {
+      result << "FizzBuzz";
+    }
+    else if (i % 3 == 0)
+    {
+      result << "Fizz";
+    }
+    else if (i % 5 == 0)
+    {
+      result << "Buzz";
+    }
+    else {
+      result << i;
+    }
+    result << " ";
+  }
+  return result.str();
+}
