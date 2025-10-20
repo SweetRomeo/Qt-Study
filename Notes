@@ -96,3 +96,31 @@ string FizzBuzz(int num) {
   }
   return result.str();
 }
+/*-------------------------------------------------------------
+Qt de emit ile bağlantı kurulan fonksiyon QObject::connect
+çağrısının durumuna göre bir kere veya birden fazla kere çağrılabilir 
+örneğin aşağıdaki gibi bir örnekte 11 kere değil 2 kere çağrılır çünkü
+burada uniqueconnection kullanımı söz konusudur.
+-------------------------------------------------------------*/
+#include <QCoreApplication>
+#include "dog.h"
+#include "owner.h"
+
+int main(int argc, char *argv[])
+{
+    QCoreApplication a(argc, argv);
+
+    Owner owner;
+    Dog dog;
+
+    QObject::connect(&owner, &Owner::treats, &dog, &Dog::treats);
+    
+    for (int i = 0; i < 10; ++i)
+    {
+        QObject::connect(&owner, &Owner::treats, &dog, &Dog::treats, Qt::UniqueConnection); // Unique connection
+    }
+
+    owner.giveSnacks();
+
+    return a.exec();
+}
