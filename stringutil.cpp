@@ -346,3 +346,24 @@ std::string StringUtil::PalindromeCreator(std::string text) {
 
     return "not possible";
 }
+
+std::string StringUtil::RemoveBrackets(std::string text)
+{
+    auto count = 0;
+    for (char c : text)
+    {
+        if (c == '(')
+        {
+            count++;
+        }
+        else if (c == ')' && count > 0)
+        {
+            count--;
+        }
+        else
+        {
+            count++;
+        }
+    }
+    return std::to_string(count);
+}
