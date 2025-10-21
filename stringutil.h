@@ -4,7 +4,6 @@
 #include <QObject>
 #include <string>
 #include <cctype>
-#include <unordered_map>
 
 class StringUtil : public QObject
 {
@@ -30,6 +29,7 @@ public:
     static std::string CamelCase(std::string);
     static std::string ASCIIConversion(std::string);
     static std::string PalindromeCreator(std::string);
+private:
     static int length(char*);
     static bool isVowel(char);
 signals:
