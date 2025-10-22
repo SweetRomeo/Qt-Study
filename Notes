@@ -185,6 +185,14 @@ int main(int argc, char *argv[])
     qInfo() << "ISO Date" << now.toString(Qt::DateFormat::ISODate);
     qInfo() << "RFC2822Date" << now.toString(Qt::DateFormat::RFC2822Date);
     qInfo() << "TextDate" << now.toString(Qt::DateFormat::TextDate);
+
+    QDateTime current = QDateTime::currentDateTime();
+
+    qInfo() << current;
+    QDateTime expire = current.addDays(45);
+    qInfo() << "Expire on : " << expire;
+
+    qInfo << current > expire ? "Expired!" : "Not Expired!";
     return a.exec();
 }
 /*-------------------------------------------------------
