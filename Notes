@@ -171,6 +171,16 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
+    QDate today = QDate::currentDate();
+    qInfo() << today;
+    qInfo() << today.addDays(1);
+    qInfo() << today.addYears(20);
+
+    // Different than Qt 5
+    qInfo() << "ISO Date" << today.toString(Qt::DateFormat::ISODate);
+    qInfo() << "ISO Date" << today.toString(Qt::DateFormat::RFC2822Date);
+    qInfo() << "ISO Date" << today.toString(Qt::DateFormat::TextDate);
+
     return a.exec();
 }
 /*-------------------------------------------------------
