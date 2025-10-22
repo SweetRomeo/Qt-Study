@@ -159,8 +159,20 @@ programcı eklemiş olduğu sınıfı QObject sınıfından türetmelidir.
 Örneğin bu connect fonksiyonunun çağrılmasını sağlar.
 --------------------------------------------------------*/
 /*-------------------------------------------------------
-
+QDate sınıfı temel date işlemlerini yapmaya yarar.
+Aşağıda bunla ilgili birkaç örnek verilmiştir.
 --------------------------------------------------------*/
+#include <QCoreApplication>
+#include <QDebug>
+#include <QDate>
+#include <QTime>
+
+int main(int argc, char *argv[])
+{
+    QCoreApplication a(argc, argv);
+
+    return a.exec();
+}
 /*-------------------------------------------------------
 
 --------------------------------------------------------*/
