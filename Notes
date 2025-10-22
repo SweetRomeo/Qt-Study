@@ -152,7 +152,11 @@ int main(int argc, char *argv[])
     return a.exec();
 }
 /*-------------------------------------------------------
-
+Qt'a ait özel sınıflar:
+- QObject: Bu sınıf non-template özellik gösteren tüm sınıfların 
+taban sınıfı olma özelliğini gösterir. Qt araçlarını kullanırken
+programcı eklemiş olduğu sınıfı QObject sınıfından türetmelidir.
+Örneğin bu connect fonksiyonunun çağrılmasını sağlar.
 --------------------------------------------------------*/
 /*-------------------------------------------------------
 
