@@ -124,3 +124,6 @@ int main(int argc, char *argv[])
 
     return a.exec();
 }
+/*-------------------------------------------------------
+Exception mekanizması da Qt de C++ hemen hemen aynı çalışmaktadır.
+--------------------------------------------------------*/
