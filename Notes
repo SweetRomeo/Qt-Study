@@ -138,7 +138,7 @@ Ancak adresleri kullanılarak pointer ve referanslara bağlanılabilir.
 template <class T>
 void display(T value)
 {
-    qInfo() << "val"
+    qInfo() << "value -> " << value;
 }
 
 int main(int argc, char *argv[])
