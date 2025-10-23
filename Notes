@@ -295,7 +295,7 @@ int main(int argc, char *argv[])
     return a.exec();
 }
 /*-------------------------------------------------------
-QList
+QList containerı temelde std::list containerına son derece benzemektedir.
 --------------------------------------------------------*/
 #include <QCoreApplication>
 #include <QDebug>
