@@ -228,7 +228,7 @@ int main(int argc, char *argv[])
 /*-------------------------------------------------------
 QVariant sınıfı farklı türden değerler alabilmektedir. 
 Örneğin bu türden bir değişkene int türünden de QString türünden 
-de bir nesne atanabilir.
+de bir nesne atanabilir. Buna göre aşağıdaki örnekteki kodu inceleyiniz.
 --------------------------------------------------------*/
 #include <QCoreApplication>
 #include <QDebug>
