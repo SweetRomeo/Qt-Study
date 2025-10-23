@@ -197,8 +197,34 @@ int main(int argc, char *argv[])
 }
 /*-------------------------------------------------------
 QString sınıfı pek çok açıdan C++'ın std::string containerına benzemektedir.
+Ancak QString'in bazı özellikleri farklılık göstermektedir. QString'in özel üye fonksiyonları 
+isimleri farklı olsa std::string containerıyla aynı işi yapıyor olabilir.
 --------------------------------------------------------*/
+#include <QCoreApplication>
+#include <QDebug>
 
+int main(int argc, char *argv[])
+{
+    QCoreApplication a(argc, argv);
+    
+    QString name = "Bryan Cairns";
+    qInfo() << name.mid(1);
+    qInfo() << name.mid(1, 3);
+    qInfo() << name.insert(0, "Mr. ");
+    qInfo() << name.split(" ");
+    
+    if (auto index = name.indexOf(" "); index != -1)
+    {
+        qInfo() << name.remove(0, index).trimmed();
+    }
+    
+    QString title = "Teacher";
+    QString full = name + " " + title;
+    qInfo() << full;
+    qInfo() << full.toUtf8();
+    
+    return a.exec();
+}
 /*-------------------------------------------------------
 
 --------------------------------------------------------*/
