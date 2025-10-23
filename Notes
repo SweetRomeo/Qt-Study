@@ -320,8 +320,31 @@ int main(int argc, char *argv[])
 }
 
 /*-------------------------------------------------------
-
+QVector yapı olarak STL'deki std::vector containerına son derece
+benzemektedir. Ancak QVector yerine Qt6 ile beraber QList tercih edilmektedir.
+Yukarıdaki kodu QVector ile yazmamız aşağıdaki gibi mümkün olur.
 --------------------------------------------------------*/
+#include <QCoreApplication>
+#include <QDebug>
+
+int main(int argc, char *argv[])
+{
+    QCoreApplication a(argc, argv);
+
+    QString data = "Hello world how are you";
+    QVector<QString> list = data.split(" ");
+
+    foreach(QString word, list)
+    {
+        qInfo() << word;
+    }
+
+    QVector<int> age({44, 56, 21, 13});
+    age.append(99);
+    age.remove(1);
+    qInfo() << age;
+    return a.exec();
+}
 /*-------------------------------------------------------
 
 --------------------------------------------------------*/
