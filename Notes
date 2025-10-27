@@ -381,6 +381,9 @@ int main(int argc, char *argv[])
 Qt'te C++'ta bulunan smart pointerlara benzer özellik gösteren 
 özel sınıflar vardır Burada QSharedPointer aslında C++'taki
 std::shared_ptr ile son derece benzer özellik göstermektedir.
+Qt'de buna ek olarak scopedPointer da mevcuttur. Bu ise scope 
+tamamlandığında yok edilir. SharedPointerlarda ise reference count 
+sıfıra indiği zaman yok edilme işlemi gerçekleştirilir.
 --------------------------------------------------------*/
 #include <QCoreApplication>
 #include <QDebug>
