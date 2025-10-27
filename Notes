@@ -449,3 +449,15 @@ int main(int argc, char *argv[])
 /*-------------------------------------------------------
 
 --------------------------------------------------------*/
+#include <QCoreApplication>
+#include <QDebug>
+#include <QSet>
+
+int main(int argc, char *argv[])
+{
+    QCoreApplication a(argc, argv);
+    
+    QSet<QString> people;
+    people << "Bryan" << "Tammy" << "Chris" << "Heather";
+    return a.exec();
+}
