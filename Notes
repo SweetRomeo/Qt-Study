@@ -424,8 +424,28 @@ int main(int argc, char *argv[])
 }
 
 /*-------------------------------------------------------
-
+Qt Collection sınıfları temelde C++'ın STL kütüphanesinin
+Containerlarıyla pek çok açıdan benzerlik göstermektedir.
+Aşağıdaki örnekte Qlist containerına örnek verilmiştir.
 --------------------------------------------------------*/
+#include <QCoreApplication>
+#include <QDebug>
+#include <QList>
+
+int main(int argc, char *argv[])
+{
+    QCoreApplication a(argc, argv);
+
+    QList<int> list;
+
+    list << 1 << 2 << 3;
+    
+    for (auto i = 0; i < 5; ++i)
+    {
+        list.append(i);
+    }
+    return a.exec();
+}
 /*-------------------------------------------------------
 
 --------------------------------------------------------*/
