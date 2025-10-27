@@ -378,8 +378,47 @@ int main(int argc, char *argv[])
     return a.exec();
 }
 /*-------------------------------------------------------
-
+Qt'te C++'ta bulunan smart pointerlara benzer özellik gösteren 
+özel sınıflar vardır Burada QSharedPointer aslında C++'taki
+std::shared_ptr ile son derece benzer özellik göstermektedir.
 --------------------------------------------------------*/
+#include <QCoreApplication>
+#include <QDebug>
+#include <QSharedPointer>
+#include "test.h"
+
+QSharedPointer<Test> getObject(QString name)
+{
+    QSharedPointer<Test> sp(new Test());
+    sp->setObjectName(name);
+    return sp;
+}
+
+void doWork(QSharedPointer<Test> sp)
+{
+    qInfo() << "Work " << sp.data();
+    qInfo() << "SharedPointer" << &sp;
+}
+
+void test()
+{
+    qInfo() << "Getting the object";
+    QSharedPointer<Test> ptr = getObject("My object");
+    qInfo() << "SharedPointer" << &ptr;
+    qInfo() << "Object" << ptr.data();
+
+    doWork(ptr);
+    // Reference count is zero
+    qInfo() << "Complete";
+}
+
+
+int main(int argc, char *argv[])
+{
+    QCoreApplication a(argc, argv);
+    test();
+    return a.exec();
+}
 
 /*-------------------------------------------------------
 
