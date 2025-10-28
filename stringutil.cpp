@@ -367,3 +367,51 @@ std::string StringUtil::RemoveBrackets(std::string text)
     }
     return std::to_string(count);
 }
+
+bool StringUtil::isAdjacent(std::string str)
+{
+    for (int i = 0; i < str.size() - 2; ++i)
+    {
+        if (isdigit(str[i]) && isdigit(str[i + 1]) && isdigit(str[i + 2]))
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+bool StringUtil::hasThreeUniqueDigits(std::string str)
+{
+    std::string result;
+    for (char ch : str)
+    {
+        if (isdigit(ch))
+        {
+            if (auto search = result.find(ch); search == std::string::npos)
+            {
+                result += ch;
+            }
+        }
+    }
+    return result.size() == 3;
+}
+
+bool StringUtil::ThreeNumbers(std::string str) {
+    std::string temp;
+    for (auto i = 0; i < str.size(); ++i)
+    {
+        if (!isspace(str[i]))
+        {
+            temp += str[i];
+        }
+        else
+        {
+            if (!hasThreeUniqueDigits(temp) || isAdjacent(temp))
+            {
+                return false;
+            }
+            temp = "";
+        }
+    }
+    return hasThreeUniqueDigits(temp) && !isAdjacent(temp);
+}

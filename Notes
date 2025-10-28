@@ -124,3 +124,340 @@ int main(int argc, char *argv[])
 
     return a.exec();
 }
+/*-------------------------------------------------------
+Exception mekanizması da Qt de C++ hemen hemen aynı çalışmaktadır.
+--------------------------------------------------------*/
+/*-------------------------------------------------------
+QObject nesneleri ne kopyalanabilir ne de taşınabilir. 
+Ancak adresleri kullanılarak pointer ve referanslara bağlanılabilir.
+Örneğin aşağıdaki örnekte bu durum gösterilmiştir.
+--------------------------------------------------------*/
+#include <QCoreApplication>
+#include <QDebug>
+
+template <class T>
+void display(T value)
+{
+    qInfo() << "value -> " << value;
+}
+
+int main(int argc, char *argv[])
+{
+    display(4);
+    display(3.14);
+    display(QString("Hello"));
+    QObject obj;
+    display<QObject&>(obj);
+
+    return a.exec();
+}
+/*-------------------------------------------------------
+Qt'a ait özel sınıflar:
+- QObject: Bu sınıf non-template özellik gösteren tüm sınıfların 
+taban sınıfı olma özelliğini gösterir. Qt araçlarını kullanırken
+programcı eklemiş olduğu sınıfı QObject sınıfından türetmelidir.
+Örneğin bu connect fonksiyonunun çağrılmasını sağlar.
+--------------------------------------------------------*/
+/*-------------------------------------------------------
+QDate sınıfı temel date işlemlerini yapmaya yarar.
+Aşağıda bunla ilgili birkaç örnek verilmiştir.
+--------------------------------------------------------*/
+#include <QCoreApplication>
+#include <QDebug>
+#include <QDate>
+#include <QTime>
+
+int main(int argc, char *argv[])
+{
+    QCoreApplication a(argc, argv);
+
+    QDate today = QDate::currentDate();
+    qInfo() << today;
+    qInfo() << today.addDays(1);
+    qInfo() << today.addYears(20);
+
+    // Different than Qt 5
+    qInfo() << "ISO Date" << today.toString(Qt::DateFormat::ISODate);
+    qInfo() << "RFC2822Date" << today.toString(Qt::DateFormat::RFC2822Date);
+    qInfo() << "TextDate" << today.toString(Qt::DateFormat::TextDate);
+
+    QTime now = QTime::currentTime();
+    qInfo() << "ISO Date" << now.toString(Qt::DateFormat::ISODate);
+    qInfo() << "RFC2822Date" << now.toString(Qt::DateFormat::RFC2822Date);
+    qInfo() << "TextDate" << now.toString(Qt::DateFormat::TextDate);
+
+    QDateTime current = QDateTime::currentDateTime();
+
+    qInfo() << current;
+    QDateTime expire = current.addDays(45);
+    qInfo() << "Expire on : " << expire;
+
+    qInfo << current > expire ? "Expired!" : "Not Expired!";
+    return a.exec();
+}
+/*-------------------------------------------------------
+QString sınıfı pek çok açıdan C++'ın std::string containerına benzemektedir.
+Ancak QString'in bazı özellikleri farklılık göstermektedir. QString'in özel üye fonksiyonları 
+isimleri farklı olsa std::string containerıyla aynı işi yapıyor olabilir.
+--------------------------------------------------------*/
+#include <QCoreApplication>
+#include <QDebug>
+
+int main(int argc, char *argv[])
+{
+    QCoreApplication a(argc, argv);
+    
+    QString name = "Bryan Cairns";
+    qInfo() << name.mid(1);
+    qInfo() << name.mid(1, 3);
+    qInfo() << name.insert(0, "Mr. ");
+    qInfo() << name.split(" ");
+    
+    if (auto index = name.indexOf(" "); index != -1)
+    {
+        qInfo() << name.remove(0, index).trimmed();
+    }
+    
+    QString title = "Teacher";
+    QString full = name + " " + title;
+    qInfo() << full;
+    qInfo() << full.toUtf8();
+    
+    return a.exec();
+}
+/*-------------------------------------------------------
+QVariant sınıfı farklı türden değerler alabilmektedir. 
+Örneğin bu türden bir değişkene int türünden de QString türünden 
+de bir nesne atanabilir. Buna göre aşağıdaki örnekteki kodu inceleyiniz.
+--------------------------------------------------------*/
+#include <QCoreApplication>
+#include <QDebug>
+#include <QVariant>
+
+void test(QVariant value)
+{
+    qInfo() << value;
+
+    int i = 0;
+    bool ok = false;
+    i = value.toInt(&ok);
+    if (ok)
+    {
+        qInfo() << "Int" << i;
+    }
+    else
+    {
+        qInfo() << "Not a int!";
+    }
+}
+
+int main(int argc, char *argv[])
+{
+    QCoreApplication a(argc, argv);
+
+    QVariant value = 1;
+    QVariant value2 = "Hello World";
+
+    test(value);
+    test(value2);
+    return a.exec();
+}
+/*-------------------------------------------------------
+QStringList
+--------------------------------------------------------*/
+#include <QCoreApplication>
+#include <QDebug>
+#include <QVariant>
+
+int main(int argc, char *argv[])
+{
+    QCoreApplication a(argc, argv);
+
+    QString data = "Hello world how are you";
+    QStringList lst = data.split(" ");
+    qInfo() << lst;
+
+    foreach (QString str, lst)
+    {
+        qInfo() << str;
+    }
+
+    lst.sort(Qt::CaseInsensitive);
+    qInfo() << lst;
+
+    QString myvar = "Hello";
+    if (lst.contains(myvar))
+    {
+        int index = lst.indexOf(myvar);
+        qInfo() << lst.value(index);
+    }
+
+    return a.exec();
+}
+/*-------------------------------------------------------
+QList containerı temelde std::list containerına son derece benzemektedir.
+--------------------------------------------------------*/
+#include <QCoreApplication>
+#include <QDebug>
+
+int main(int argc, char *argv[])
+{
+    QCoreApplication a(argc, argv);
+
+    QString data = "Hello world how are you";
+    QList<QString> list = data.split(" ");
+
+    foreach(QString word, list)
+    {
+        qInfo() << word;
+    }
+
+    QList<int> age({44, 56, 21, 13});
+    age.append(99);
+    age.remove(1);
+    qInfo() << age;
+    return a.exec();
+}
+
+/*-------------------------------------------------------
+QVector yapı olarak STL'deki std::vector containerına son derece
+benzemektedir. Ancak QVector yerine Qt6 ile beraber QList tercih edilmektedir.
+Yukarıdaki kodu QVector ile yazmamız aşağıdaki gibi mümkün olur.
+--------------------------------------------------------*/
+#include <QCoreApplication>
+#include <QDebug>
+
+int main(int argc, char *argv[])
+{
+    QCoreApplication a(argc, argv);
+
+    QString data = "Hello world how are you";
+    QVector<QString> list = data.split(" ");
+
+    foreach(QString word, list)
+    {
+        qInfo() << word;
+    }
+
+    QVector<int> age({44, 56, 21, 13});
+    age.append(99);
+    age.remove(1);
+    qInfo() << age;
+    return a.exec();
+}
+/*-------------------------------------------------------
+Qt de QObject nesneleri arasında katılım yapılabilir.
+Bu işlem setParent üye fonksiyonu kullanılarak yapılmaktadır.
+--------------------------------------------------------*/
+#include <QCoreApplication>
+#include <QDebug>
+
+int main(int argc, char *argv[])
+{
+    QCoreApplication a(argc, argv);
+
+    QObject parent;
+    parent.setObjectName("Parent");
+
+    QObject child;
+    child.setObjectName("Child");
+
+    child.setParent(&parent);
+
+    //Get the parent
+    qInfo() << child.parent();
+
+    //Get the children
+    qInfo() << parent.children();
+
+    foreach(QObject* obj, parent.children())
+    {
+        qInfo() << obj;
+    }
+
+    return a.exec();
+}
+/*-------------------------------------------------------
+Qt'te C++'ta bulunan smart pointerlara benzer özellik gösteren 
+özel sınıflar vardır Burada QSharedPointer aslında C++'taki
+std::shared_ptr ile son derece benzer özellik göstermektedir.
+Qt'de buna ek olarak scopedPointer da mevcuttur. Bu ise scope 
+tamamlandığında yok edilir. SharedPointerlarda ise reference count 
+sıfıra indiği zaman yok edilme işlemi gerçekleştirilir.
+--------------------------------------------------------*/
+#include <QCoreApplication>
+#include <QDebug>
+#include <QSharedPointer>
+#include "test.h"
+
+QSharedPointer<Test> getObject(QString name)
+{
+    QSharedPointer<Test> sp(new Test());
+    sp->setObjectName(name);
+    return sp;
+}
+
+void doWork(QSharedPointer<Test> sp)
+{
+    qInfo() << "Work " << sp.data();
+    qInfo() << "SharedPointer" << &sp;
+}
+
+void test()
+{
+    qInfo() << "Getting the object";
+    QSharedPointer<Test> ptr = getObject("My object");
+    qInfo() << "SharedPointer" << &ptr;
+    qInfo() << "Object" << ptr.data();
+
+    doWork(ptr);
+    // Reference count is zero
+    qInfo() << "Complete";
+}
+
+
+int main(int argc, char *argv[])
+{
+    QCoreApplication a(argc, argv);
+    test();
+    return a.exec();
+}
+
+/*-------------------------------------------------------
+Qt Collection sınıfları temelde C++'ın STL kütüphanesinin
+Containerlarıyla pek çok açıdan benzerlik göstermektedir.
+Aşağıdaki örnekte Qlist containerına örnek verilmiştir.
+--------------------------------------------------------*/
+#include <QCoreApplication>
+#include <QDebug>
+#include <QList>
+
+int main(int argc, char *argv[])
+{
+    QCoreApplication a(argc, argv);
+
+    QList<int> list;
+
+    list << 1 << 2 << 3;
+    
+    for (auto i = 0; i < 5; ++i)
+    {
+        list.append(i);
+    }
+    return a.exec();
+}
+/*-------------------------------------------------------
+
+--------------------------------------------------------*/
+#include <QCoreApplication>
+#include <QDebug>
+#include <QSet>
+
+int main(int argc, char *argv[])
+{
+    QCoreApplication a(argc, argv);
+    
+    QSet<QString> people;
+    people << "Bryan" << "Tammy" << "Chris" << "Heather";
+    return a.exec();
+}
