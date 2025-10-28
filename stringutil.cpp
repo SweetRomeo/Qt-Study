@@ -415,3 +415,25 @@ bool StringUtil::ThreeNumbers(std::string str) {
     }
     return hasThreeUniqueDigits(temp) && !isAdjacent(temp);
 }
+
+std::string StringUtil::DifferentCases(std::string)
+{
+    string temp;
+    string result;
+    bool isBegin = true;
+    for (char ch : str)
+    {
+        if (isalpha(ch))
+        {
+            temp += isBegin ? toupper(ch) : tolower(ch);
+            isBegin = false;
+        }
+        else {
+            result += temp;
+            temp = "";
+            isBegin = true;
+        }
+    }
+    result += temp;
+    return result;
+}
