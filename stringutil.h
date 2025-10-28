@@ -30,6 +30,9 @@ public:
     static std::string ASCIIConversion(std::string);
     static std::string PalindromeCreator(std::string);
     static std::string RemoveBrackets(std::string);
+    static bool isAdjacent(std::string);
+    static bool hasThreeUniqueDigits(std::string);
+    static bool ThreeNumbers(std::string);
 private:
     static int length(char*);
     static bool isVowel(char);
