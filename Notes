@@ -546,8 +546,33 @@ int main(int argc, char *argv[])
     return a.exec();
 }
 /*-------------------------------------------------------
+Qt'de Concurrent programlama ister C++'ın standart kütüphanesiyle,
+ister Qt'nin kendi QThread sınıfıyla yapılabilir. Ancak Qt'de
+çalışılırken genellikle QThread sınıfı tercih edilmelidir.
 
+Aşağıdaki örnekte bir Qt sınıfı örneği verilmiştir.
 --------------------------------------------------------*/
+#include <QCoreApplication>
+#include <QDebug>
+#include <QThread>
+
+void test()
+{
+    qInfo() << "Testing" << QThread::currentThread();
+}
+
+int main(int argc, char *argv[])
+{
+    QCoreApplication a(argc, argv);
+
+    QThread::currentThread()->setObjectName("Main Thread");
+
+    qInfo() << "Starting" << QThread::currentThread();
+    test();
+    qInfo() << "Finished" << QThread::currentThread();
+
+    return a.exec();
+}
 /*-------------------------------------------------------
 
 --------------------------------------------------------*/
