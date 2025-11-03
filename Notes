@@ -575,8 +575,32 @@ int main(int argc, char *argv[])
     return a.exec();
 }
 /*-------------------------------------------------------
-
+Aşağıdaki örnekte bir timer sınıfı kullanımı gösterilmiştir.
+Burada ilk parametre ms olarak 3000 göndermektedir. Şüphesiz bu 
+sayının değişmesi test fonksiyonunun çağrılma zamanını değiştirmektedir.
 --------------------------------------------------------*/
+#include <QCoreApplication>
+#include <QDebug>
+#include <QTimer>
+#include <QThread>
+
+void test()
+{
+    qInfo() << "Testing" << QThread::currentThread();
+}
+
+int main(int argc, char *argv[])
+{
+    QCoreApplication a(argc, argv);
+
+    QThread::currentThread()->setObjectName("Main Thread");
+    qInfo() << "Starting" << QThread::currentThread();
+    QTimer timer;
+    timer.singleShot(3000, &test);
+    qInfo() << "Finished" << QThread::currentThread();
+
+    return a.exec();
+}
 /*-------------------------------------------------------
 
 --------------------------------------------------------*/
