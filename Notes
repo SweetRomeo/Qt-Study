@@ -640,6 +640,9 @@ Proxy Servers
 --------------------------------------------------------*/
 /*-------------------------------------------------------
 Protocols
+SSL: Bağlantının güvenli bir şekilde yapılması SSL yardımıyla 
+yapılmaktadır. Burada proses Server tarafından Şifrelenmiş 
+data 
 --------------------------------------------------------*/
 /*-------------------------------------------------------
 
