@@ -437,3 +437,67 @@ std::string StringUtil::DifferentCases(std::string)
     result += temp;
     return result;
 }
+
+std::string StringUtil::SwapCase(std::string text)
+{
+    for (auto i = 0; i < text.size(); ++i)
+    {
+        if (isalpha(text[i]))
+        {
+            text[i] = isupper(text[i]) ? tolower(text[i]) : toupper(text[i]);
+        }
+    }
+    return text;
+}
+
+std::string StringUtil::NumberEncoding(std::string str)
+{
+    std::string alphabeth = " abcdefghijklmnopqrstuvwxyz";
+    std::string result;
+    for (auto i = 0; i < str.size(); ++i)
+    {
+        if (isalpha(str[i]))
+        {
+            auto search = alphabeth.find(str[i]);
+            result += std::to_string(search);
+        }
+        else {
+            result += str[i];
+        }
+    }
+    return result;
+}
+
+int StringUtil::ConsonantCount(std::string str)
+{
+    std::string consonantLetters = "bcdfghjklmnpqrstvwxyz";
+    int consonantCount = 0;
+    for (char c : str) {
+        if (auto search = consonantLetters.find(tolower(c)); search != std::string::npos) {
+            consonantCount++;
+        }
+    }
+    return consonantCount;
+}
+
+std::string StringUtil::DashInsert(std::string str)
+{
+    std::string result;
+    for (auto i = 0; i < str.size() - 1; i++)
+    {
+        int num1 = str[i] - '0';
+        int num2 = str[i + 1] - '0';
+
+        if (num1 % 2 == 1 && num2 % 2 == 1)
+        {
+            result += std::to_string(num1) + "-";
+        }
+        else
+        {
+            result += std::to_string(num1);
+        }
+    }
+    result += str[str.size() - 1];
+
+    return result;
+}

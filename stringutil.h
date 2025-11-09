@@ -34,6 +34,10 @@ public:
     static bool hasThreeUniqueDigits(std::string);
     static bool ThreeNumbers(std::string);
     static std::string DifferentCases(std::string);
+    static std::string SwapCase(std::string);
+    static std::string NumberEncoding(std::string);
+    static int ConsonantCount(std::string);
+    static std::string DashInsert(std::string);
 private:
     static int length(char*);
     static bool isVowel(char);
