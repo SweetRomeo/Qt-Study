@@ -416,6 +416,7 @@ bool StringUtil::ThreeNumbers(std::string str) {
     return hasThreeUniqueDigits(temp) && !isAdjacent(temp);
 }
 
+<<<<<<< HEAD
 std::string StringUtil::reverseWords(std::string text)
 {
     using namespace std;
@@ -443,5 +444,26 @@ std::string StringUtil::reverseWords(std::string text)
         }
     }
 
+=======
+std::string StringUtil::DifferentCases(std::string)
+{
+    string temp;
+    string result;
+    bool isBegin = true;
+    for (char ch : str)
+    {
+        if (isalpha(ch))
+        {
+            temp += isBegin ? toupper(ch) : tolower(ch);
+            isBegin = false;
+        }
+        else {
+            result += temp;
+            temp = "";
+            isBegin = true;
+        }
+    }
+    result += temp;
+>>>>>>> 8da9f9a6598ab0aa793e0e28ad05ef9c602bea33
     return result;
 }
