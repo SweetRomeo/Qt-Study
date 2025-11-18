@@ -415,3 +415,33 @@ bool StringUtil::ThreeNumbers(std::string str) {
     }
     return hasThreeUniqueDigits(temp) && !isAdjacent(temp);
 }
+
+std::string StringUtil::reverseWords(std::string text)
+{
+    using namespace std;
+    vector<string> words;
+    string word;
+    for (auto i = 0; i < text.size(); ++i)
+    {
+        if (text[i] != ' ')
+        {
+            word += text[i];
+        }
+        else
+        {
+            words.emplace_back(word);
+            word = "";
+        }
+    }
+    words.emplace_back(word);
+    string result;
+    for (int i = words.size() - 1; i >= 0; --i)
+    {
+        result += words[i];
+        if (i > 0) {
+            result += " ";
+        }
+    }
+
+    return result;
+}

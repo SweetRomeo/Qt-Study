@@ -33,6 +33,7 @@ public:
     static bool isAdjacent(std::string);
     static bool hasThreeUniqueDigits(std::string);
     static bool ThreeNumbers(std::string);
+    static std::string reverseWords(std::string);
 private:
     static int length(char*);
     static bool isVowel(char);
