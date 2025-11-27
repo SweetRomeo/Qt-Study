@@ -6,10 +6,11 @@
 
 class TestStringUtil : public QObject
 {
+    Q_OBJECT
 public:
     explicit TestStringUtil(QObject *parent = nullptr);
 private slots:
-
+    void shouldReturnReverseWhenThereisValidText();
 
 signals:
 };

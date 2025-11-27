@@ -442,6 +442,7 @@ std::string StringUtil::reverseWords(std::string text)
             result += " ";
         }
     }
+    return result;
 }
 
 std::string StringUtil::DifferentCases(std::string str)
