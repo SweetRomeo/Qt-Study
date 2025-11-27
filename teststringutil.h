@@ -2,7 +2,7 @@
 #define TESTSTRINGUTIL_H
 
 #include <QObject>
-#include <string>
+#include <QtTest>
 
 class TestStringUtil : public QObject
 {
