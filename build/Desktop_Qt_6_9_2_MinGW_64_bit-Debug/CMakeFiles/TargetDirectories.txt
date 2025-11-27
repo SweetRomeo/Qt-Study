@@ -1,5 +1,9 @@
-C:/Users/berke/OneDrive/Desktop/Projects/Qt-Study/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/CMakeFiles/qt6-app.dir
+C:/Users/berke/OneDrive/Desktop/Projects/Qt-Study/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/CMakeFiles/MyMainApp.dir
+C:/Users/berke/OneDrive/Desktop/Projects/Qt-Study/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/CMakeFiles/MyTests.dir
+C:/Users/berke/OneDrive/Desktop/Projects/Qt-Study/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/CMakeFiles/test.dir
 C:/Users/berke/OneDrive/Desktop/Projects/Qt-Study/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/CMakeFiles/edit_cache.dir
 C:/Users/berke/OneDrive/Desktop/Projects/Qt-Study/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/CMakeFiles/rebuild_cache.dir
-C:/Users/berke/OneDrive/Desktop/Projects/Qt-Study/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/CMakeFiles/qt6-app_autogen_timestamp_deps.dir
-C:/Users/berke/OneDrive/Desktop/Projects/Qt-Study/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/CMakeFiles/qt6-app_autogen.dir
+C:/Users/berke/OneDrive/Desktop/Projects/Qt-Study/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/CMakeFiles/MyMainApp_autogen_timestamp_deps.dir
+C:/Users/berke/OneDrive/Desktop/Projects/Qt-Study/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/CMakeFiles/MyMainApp_autogen.dir
+C:/Users/berke/OneDrive/Desktop/Projects/Qt-Study/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/CMakeFiles/MyTests_autogen_timestamp_deps.dir
+C:/Users/berke/OneDrive/Desktop/Projects/Qt-Study/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/CMakeFiles/MyTests_autogen.dir

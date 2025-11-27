@@ -1,0 +1,18 @@
+# ninja log v6
+21	1123	7859645446571004	MyTests_autogen/timestamp	72f89da9db61e45a
+21	1123	7859645446571004	MyTests_autogen/mocs_compilation.cpp	72f89da9db61e45a
+21	1123	7859645446571004	C:/Users/berke/OneDrive/Desktop/Projects/Qt-Study/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/MyTests_autogen/timestamp	72f89da9db61e45a
+21	1123	7859645446571004	C:/Users/berke/OneDrive/Desktop/Projects/Qt-Study/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/MyTests_autogen/mocs_compilation.cpp	72f89da9db61e45a
+10	1158	7859645446761148	MyMainApp_autogen/timestamp	3ba563cd2eb96604
+10	1158	7859645446761148	MyMainApp_autogen/mocs_compilation.cpp	3ba563cd2eb96604
+10	1158	7859645446761148	C:/Users/berke/OneDrive/Desktop/Projects/Qt-Study/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/MyMainApp_autogen/timestamp	3ba563cd2eb96604
+10	1158	7859645446761148	C:/Users/berke/OneDrive/Desktop/Projects/Qt-Study/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/MyMainApp_autogen/mocs_compilation.cpp	3ba563cd2eb96604
+1131	5199	7859645447791485	CMakeFiles/MyTests.dir/MyTests_autogen/mocs_compilation.cpp.obj	b2cb7ca403159375
+1136	5210	7859645447842170	CMakeFiles/MyTests.dir/teststringutil.cpp.obj	13befeace7f94b
+1184	5275	7859645448312016	CMakeFiles/MyMainApp.dir/source.cpp.obj	af9781f255f0ea6e
+1197	5299	7859645448448825	CMakeFiles/MyMainApp.dir/station.cpp.obj	929a6da33d71701c
+1190	5317	7859645448380437	CMakeFiles/MyMainApp.dir/destination.cpp.obj	7446ada7dcb0d7b9
+1171	5335	7859645448191407	CMakeFiles/MyMainApp.dir/numberutil.cpp.obj	23b38b557d46c94c
+1204	5345	7859645448519127	CMakeFiles/MyMainApp.dir/radio.cpp.obj	54958d1c40316033
+1166	5629	7859645448141339	CMakeFiles/MyMainApp.dir/main.cpp.obj	cdf6813ab5b8cefc
+1161	5763	7859645448090836	CMakeFiles/MyMainApp.dir/MyMainApp_autogen/mocs_compilation.cpp.obj	663405f74e4602cb

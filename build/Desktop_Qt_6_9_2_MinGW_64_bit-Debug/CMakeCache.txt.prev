@@ -316,12 +316,6 @@ Qt6Core_DIR:PATH=C:/Qt/6.9.2/mingw_64/lib/cmake/Qt6Core
 //The directory containing a CMake configuration file for Qt6EntryPointPrivate.
 Qt6EntryPointPrivate_DIR:PATH=C:/Qt/6.9.2/mingw_64/lib/cmake/Qt6EntryPointPrivate
 
-//The directory containing a CMake configuration file for Qt6TestPrivate.
-Qt6TestPrivate_DIR:PATH=C:/Qt/6.9.2/mingw_64/lib/cmake/Qt6TestPrivate
-
-//The directory containing a CMake configuration file for Qt6Test.
-Qt6Test_DIR:PATH=C:/Qt/6.9.2/mingw_64/lib/cmake/Qt6Test
-
 //The directory containing a CMake configuration file for Qt6ZlibPrivate.
 Qt6ZlibPrivate_DIR:PATH=C:/Qt/6.9.2/mingw_64/lib/cmake/Qt6ZlibPrivate
 
@@ -559,8 +553,6 @@ QT_FEATURE_avx512vbmi2:INTERNAL=ON
 QT_FEATURE_avx512vl:INTERNAL=ON
 //Qt feature: backtrace (from target Qt6::Core)
 QT_FEATURE_backtrace:INTERNAL=OFF
-//Qt feature: batch_test_support (from target Qt6::Test)
-QT_FEATURE_batch_test_support:INTERNAL=OFF
 //Qt feature: broken_threadlocal_dtors (from target Qt6::Core)
 QT_FEATURE_broken_threadlocal_dtors:INTERNAL=ON
 //Qt feature: cborstreamreader (from target Qt6::Core)
@@ -679,8 +671,6 @@ QT_FEATURE_intelcet:INTERNAL=ON
 QT_FEATURE_islamiccivilcalendar:INTERNAL=ON
 //Qt feature: itemmodel (from target Qt6::Core)
 QT_FEATURE_itemmodel:INTERNAL=ON
-//Qt feature: itemmodeltester (from target Qt6::Test)
-QT_FEATURE_itemmodeltester:INTERNAL=ON
 //Qt feature: jalalicalendar (from target Qt6::Core)
 QT_FEATURE_jalalicalendar:INTERNAL=ON
 //Qt feature: journald (from target Qt6::Core)
@@ -867,8 +857,6 @@ QT_FEATURE_temporaryfile:INTERNAL=ON
 QT_FEATURE_test_gui:INTERNAL=ON
 //Qt feature: testlib (from target Qt6::Core)
 QT_FEATURE_testlib:INTERNAL=ON
-//Qt feature: testlib_selfcover (from target Qt6::Test)
-QT_FEATURE_testlib_selfcover:INTERNAL=OFF
 //Qt feature: textdate (from target Qt6::Core)
 QT_FEATURE_textdate:INTERNAL=ON
 //Qt feature: thread (from target Qt6::Core)
@@ -895,8 +883,6 @@ QT_FEATURE_use_lld_linker:INTERNAL=OFF
 QT_FEATURE_use_mold_linker:INTERNAL=OFF
 //Qt feature: vaes (from target Qt6::Core)
 QT_FEATURE_vaes:INTERNAL=ON
-//Qt feature: valgrind (from target Qt6::Test)
-QT_FEATURE_valgrind:INTERNAL=OFF
 //Qt feature: version_tagging (from target Qt6::Core)
 QT_FEATURE_version_tagging:INTERNAL=ON
 //Qt feature: vxpipedrv (from target Qt6::Core)
