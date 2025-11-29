@@ -91,6 +91,6 @@ int main(int argc, char *argv[])
 {
     using namespace std;
     QCoreApplication a(argc, argv);
-    cout << "Hello World\n";
+    qInfo() << "Hello World\n";
     return a.exec();
 }

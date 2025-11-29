@@ -11,7 +11,8 @@ public:
     explicit TestStringUtil(QObject *parent = nullptr);
 private slots:
     void shouldReturnReverseWhenThereisValidText();
-
+    void shouldReturnTrueWhenTextisPalindrome();
+    void shouldReturnFalseWhenTextisNotPalindrome();
 signals:
 };
 
