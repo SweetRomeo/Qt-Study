@@ -1,0 +1,14 @@
+#ifndef ARRAYUTIL_H
+#define ARRAYUTIL_H
+
+#include <QObject>
+#include <vector>
+
+class Arrayutil
+{
+public:
+    Arrayutil();
+    std::vector<int> plusOne(std::vector<int> digits);
+};
+
+#endif // ARRAYUTIL_H
